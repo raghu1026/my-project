@@ -35,7 +35,7 @@ pipeline {
                 sh "docker rmi $registry:latest"
             }
         }
-        stage('Deploy') {
+        stage('Deploy to K8s') {
             steps {
                 echo 'Deploying....'
                 sh "kubectl apply -f deployment.yaml"
